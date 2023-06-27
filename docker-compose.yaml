@@ -1,0 +1,8 @@
+version: "1"
+
+services:
+  langchain-summarizer:
+    image: langchain-summarizer:1.0
+    ports:
+      - "8000:8000"
+    entrypoint: ./startup.sh

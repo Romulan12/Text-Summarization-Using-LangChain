@@ -1,0 +1,7 @@
+numpy
+wheel
+langchain
+openai
+fastapi
+uvicorn
+python-multipart
