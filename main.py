@@ -9,8 +9,9 @@ app = FastAPI()
 
 class RequestItem(BaseModel):
     """
-    Request model for text area detection
-    url : Image URL 
+    Request model for text summarization
+    text : Text to summarize 
+    model_type : model name 
     """
     
     text: str
@@ -20,10 +21,9 @@ class RequestItem(BaseModel):
 @app.post('/langchain-summarizier/')
 async def langchain_summarizer(request_item: RequestItem):
     """
-    Endpoint that accepts a POST request with an image link, and returns the percentage of the area
-    of the image occupied by the text.
+    Endpoint that accepts a POST request with the text to be summarised and the OpenAI model to use, and returns the summary of the text.
     Returns:
-        A JSON response containing the percentage of the area of the image occupied by the text.
+        A JSON response containing the summary of text.
     """
     try:
         
